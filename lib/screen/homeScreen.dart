@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_app/config/configuration.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       children: [
                         IconButton(
-                          icon: Icon(Icons.add_location, color: Colors.green),
+                          icon: Icon(Icons.add_location, color: primarycolor),
                         ),
                         Text("Ciremai"),
                       ],
@@ -76,11 +77,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  borderSide: BorderSide(color: Colors.grey),
+                  borderSide: BorderSide(color: primarycolor),
                 ),
                 prefixIcon: Icon(
                   Icons.search,
-                  color: Colors.grey,
+                  color: primarycolor,
                 ),
                 hintText: "Search Pet",
                 filled: true,
@@ -88,6 +89,33 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 40.0),
+          ),
+          Container(height: 120,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: categories.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  child: Column(
+                    children: [
+                      Container(
+                    
+                        padding: EdgeInsets.all(10),
+                        margin: EdgeInsets.only(left: 20),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: listShadow,
+                          borderRadius: BorderRadius.circular(10),
+
+                        ),
+                        child: Image.asset(categories[index]['iconPath'], height: 50,width: 50,),
+                      ),
+                      Text(categories[index]['name']),
+                    ],
+                  ),
+                );
+              },
+            ),
           )
         ],
       ),
