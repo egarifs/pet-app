@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 Color primarycolor = Color(0xff396262);
 //list of shadow maping
 List<BoxShadow> listShadow = [
-  BoxShadow(color: Colors.grey[300], blurRadius: 30, offset: Offset(0, 10))
+  BoxShadow(
+    //color: Colors.grey[300],
+    color: Colors.grey,
+    blurRadius: 15,
+    offset: Offset(0, 5),
+  )
 ];
 //list data
 List<Map> categories = [
