@@ -18,8 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return AnimatedContainer(
       transform: Matrix4.translationValues(xoffset, yoffset, 0)
         ..scale(scalefactor),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(isdraweropen ? 40 : 0.0),
+      ),
       duration: Duration(milliseconds: 250),
-      color: Colors.white,
+      //color: Colors.white,
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -147,13 +151,47 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Align(
                             alignment: Alignment.topCenter,
-                            child: Image.asset('images/pet-cat2.png'),
+                            child: Hero(
+                                tag: 1,
+                                child: Image.asset('images/pet-cat2.png')),
                           )
                         ],
                       ),
                     ),
                     Expanded(
                       child: Container(
+                        child: Container(
+                          margin: EdgeInsets.only(left: 6),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Sola'),
+                                  IconButton(
+                                      icon: Icon(Icons.mail,
+                                          color: primarycolor)),
+                                ],
+                              ),
+                              Text('Abisian Cat'),
+                              Text('2 years old'),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  IconButton(
+                                    icon: Icon(Icons.location_on,
+                                        color: primarycolor),
+                                  ),
+                                  Text('Distance 2.6 km'),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
                         margin: EdgeInsets.only(top: 60, bottom: 20),
                         decoration: BoxDecoration(
                             color: Colors.white,

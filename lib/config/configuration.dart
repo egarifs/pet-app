@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Color primarycolor = Color(0xff396262);
 //list of shadow maping
@@ -7,9 +8,22 @@ List<BoxShadow> listShadow = [
     //color: Colors.grey[300],
     color: Colors.grey,
     blurRadius: 15,
-    offset: Offset(0, 5),
+    offset: Offset(0, 5)
   )
 ];
+
+List<Map> drawerItem = [
+  {'icon': FontAwesomeIcons.paw, 'title': 'Adoption'},
+  {'icon': Icons.attach_money, 'title': 'Donation'},
+  {'icon': FontAwesomeIcons.plus, 'title': 'Add Pet'},
+  {'icon': Icons.favorite, 'title': 'Favoirtes'},
+  {'icon': FontAwesomeIcons.mailBulk, 'title': 'Message'},
+  {'icon': FontAwesomeIcons.userAlt, 'title': 'Profile'},
+
+
+
+];
+
 //list data
 List<Map> categories = [
   {'name': 'Cats', 'iconPath': 'images/cat.png'},
